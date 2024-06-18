@@ -1,0 +1,18 @@
+{
+ "format_version": 2,
+ "header": {
+   "description": "Hides your World Seed from player settings.",
+   "name": "Hide My Seed",
+   "uuid": "8a1b6e1a-b7f7-433f-a444-c7a4d8341e9f",
+   "version": [1, 0, 0],
+   "min_engine_version": [1, 20, 3]
+  },
+ "modules": [
+   {
+     "description": "Hides your World Seed from player settings.",
+     "type": "resources",
+     "uuid": "20de320a-1eb2-4567-92cc-4ee9606b2862",
+     "version": [1, 0, 0]
+   }
+ ]
+}
