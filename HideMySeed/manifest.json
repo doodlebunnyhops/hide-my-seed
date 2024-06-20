@@ -9,7 +9,6 @@
   },
  "modules": [
    {
-     "description": "Hides your World Seed from player settings.",
      "type": "resources",
      "uuid": "20de320a-1eb2-4567-92cc-4ee9606b2862",
      "version": [1, 0, 0]

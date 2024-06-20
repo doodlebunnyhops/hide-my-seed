@@ -1,0 +1,33 @@
+name: Package MCPACK HideMySeed
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches:
+      - main
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Package MCPACK
+        run: python scripts/package.py 
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: MCPACK
+          path: |
+            HideMySeed.mcpack
