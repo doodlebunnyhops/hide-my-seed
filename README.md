@@ -3,7 +3,7 @@ Minecraft PE Resource Pack for hiding your seed on dedicated servers
 
 ## Server Prep
 
-1. It is always in your best intrest to backup your world(s) before any updates!
+1. It is always in your best interest to backup your world(s) before any updates!
 1. Once you have created a backup, `stop` your server.
 
 ## Download
