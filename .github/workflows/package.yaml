@@ -2,9 +2,9 @@ name: Package MCPACK HideMySeed
 
 on:
   # Runs on pushes targeting the default branch
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -23,6 +23,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Update World Section UI
+        run: python scripts/clean.py
       - name: Package MCPACK
         run: python scripts/package.py 
       - name: Upload Artifact
@@ -31,3 +33,5 @@ jobs:
           name: HideMySeed
           path: |
             HideMySeed.mcpack
+            README.md
+          if-no-files-found: error
