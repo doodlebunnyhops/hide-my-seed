@@ -6,23 +6,49 @@ Minecraft PE Resource Pack for hiding your seed on dedicated servers
 1. It is always in your best interest to backup your world(s) before any updates!
 1. Once you have created a backup, `stop` your server.
 
-## Download
+## Download zip
 
-### Option 1 git clone
-
-1. In your servers path `/home/minecraft-pe/server/worlds/WORLD_NAME/resource_packs` run:
-    1. `git clone https://github.com/doodlebunnyhops/hide-my-seed`
-
-### Option 2 download zip
-
-1. Go to https://github.com/doodlebunnyhops/hide-my-seed
-1. Select Code
-    1. Select `Download ZIP`
+1. Go to [Actions](https://github.com/doodlebunnyhops/hide-my-seed/actions)
+    1. Find the most recent run called `Package MCPACK HideMySeed `
+1. Download the Artifact `HideMySeed`
+    1. Click on `HideMySeed` under the artifact section to download.
     1. Unzip
-        1. You may notice the unzip directory looks like: 
-        `hide-my-seed-main/hide-my-seed-main/`
-        1. Rename the second `hide-my-seed-main` to `hide-my-seed` and use this folder for the next step.
-1. Copy the folder into `/home/minecraft-pe/server/worlds/WORLD_NAME/resource_packs`
+        1. You will see 2 files.
+            - This ReadME
+            - HideMySeed.mcpack
+          
+## Install on your local machine
+
+1. Install the HideMySeed.mcpack resource.
+    1. Double click `HideMySeed.mcpack` to install.
+    2. Once Minecraft Launcher has signified the install is successful proceed.
+1. On your local machine
+    1. Create a temp world, it will make it easier to give it a unique name for a later step. Make sure to activate HideMySeed with this temp world.
+    3. Open the temp world momentarily then save and exit. This is to generate some files to transfer later.
+    4. Migrate to your minecraft world saves, generally in
+       
+       *Modify USERNAME with your path or possibly different install location.*
+        ```
+        C:\Users\USERNAME\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\minecraftWorlds
+        ```
+        1. Select the world you just created, if you're unsure which one you can open the `levelname.txt` file to see if it's the one you uniquely named earlier.
+        2. Keep this folder path handy, you will need it for transfering some files/folders.
+  
+
+## Install on Dedicated Server
+
+1. From your local copy folder
+   
+    ```text
+    C:\Users\USERNAME\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\minecraftWorlds\WORLD_HASH\resource_packs\HideMySeed
+    ```
+    into
+    ```text
+    /home/minecraft-pe/server/worlds/WORLD_NAME/resource_packs/HideMySeed
+    ```
+    
+   *Modify USERNAME and WORLD_HASH and WORLD_NAME with your path or possibly different install location.*
+
 
 ### Verify Download
 
@@ -31,12 +57,8 @@ Your file structure should now look like this inside your `/home/minecraft-pe/se
 ```text
 resource_packs
 └── hide-my-seed
-    |   LICENSE
     |   manifest.json
     |   pack_icon.png
-    |   README.md
-    |   world_resource_pack_history.json
-    |   world_resource_packs.json
     └── ui
         └── settings_sections
                 world_section.json
@@ -50,7 +72,7 @@ resource_packs
 ## Final Setup
 
 1. If you **do not have** `world_resource_packs.json` or `world_resource_pack_history.json` file in your `/home/minecraft-pe/server/worlds/WORLD_NAME` directory then:
-    1. Move those 2 files from `/home/minecraft-pe/server/worlds/WORLD_NAME/resource_packs/hide-my-seed` to `/home/minecraft-pe/server/worlds/WORLD_NAME`
+    1. Move those 2 files from Local: `C:\Users\USERNAME\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\minecraftWorlds\WORLD_HASH` to Dedicated: `/home/minecraft-pe/server/worlds/WORLD_NAME`
 1. If you **already have** `world_resource_packs.json` or `world_resource_pack_history.json` file in your `/home/minecraft-pe/server/worlds/WORLD_NAME` directory then:
     1. copy the contents in each file and add it to their respective files.
 
